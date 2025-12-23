@@ -1,4 +1,4 @@
--- Enclose in within a procedure
+-- Creating a Procedure to load the data of the csv to the tables created in the "Table_Creation.sql" script
 Create or replace procedure bronze.load_data() 
 language plpgsql 
 as $$
@@ -40,12 +40,11 @@ BEGIN
              WITH (FORMAT csv, HEADER true);
 	end_time := now();
 
-	Raise notice 'Total Time %', end_time-begin_time;
+	Raise notice 'Total Time %', end_time-begin_time; -- Calculating total time to load all the data
 END;
 $$;
 
 
 -- Calling the function and showing the result
 call bronze.load_data();
-
 select * from bronze.crm_cust_info;
