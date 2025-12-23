@@ -1,4 +1,6 @@
--- DDL statements for all datasets available
+-- DDL Table creation statements for all datasets available
+-- Each dataset gets its own table
+
 create table bronze.crm_cust_info(
 	cst_id int,
 	cst_key varchar(50),
@@ -48,4 +50,5 @@ create table bronze.erp_PX_CAT_G1V2(
 	cat varchar(50),
 	subcat varchar(50),
 	maintenance varchar(50)
+
 );
